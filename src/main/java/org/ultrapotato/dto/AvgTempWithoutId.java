@@ -1,10 +1,15 @@
 package org.ultrapotato.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.time.LocalDate;
 
 public class AvgTempWithoutId {
+	@ApiModelProperty(value = "начало периода, включительно")
 	private LocalDate startDay;
+	@ApiModelProperty(value = "конец периода, не включительно")
 	private LocalDate endDay;
+	@ApiModelProperty(value = "средняя температура")
 	private Double averageTemperature;
 
 	public AvgTempWithoutId(LocalDate startDay, LocalDate endDay, Double averageTemperature) {
