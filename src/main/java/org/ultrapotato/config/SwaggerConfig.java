@@ -20,11 +20,11 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
+				.apiInfo(metaData())
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("org.ultrapotato.controller"))
 				.paths(PathSelectors.any())
-				.build()
-				.apiInfo(metaData());
+				.build();
 	}
 
 	private ApiInfo metaData() {
