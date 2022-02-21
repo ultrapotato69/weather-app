@@ -1,7 +1,7 @@
-package org.ultrapotato.service;
+package org.ultrapotato.client;
 
 import java.time.LocalDate;
 
-public interface WeatherServiceRest {
+public interface WeatherRestClient {
 	double findAverageTemperature(LocalDate startDay, LocalDate endDay);
 }

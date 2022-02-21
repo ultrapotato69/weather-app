@@ -17,14 +17,15 @@ import java.time.LocalDate;
 @RequestMapping("/weather/novosibirsk/akademgorodok/")
 public class WeatherController {
 
-	WeatherService weatherService;
+	private final WeatherService weatherService;
 
 	public WeatherController(WeatherService weatherService) {
 		this.weatherService = weatherService;
 	}
 
 	@ApiOperation(value = "Получить среднюю температуру",
-			notes = "Получить сведения о средней температуре в Академгородке на период дней в формате yyyy-mm-dd")
+			notes = "Получить сведения о средней температуре в Академгородке на период дней в формате yyyy-mm-dd." +
+					" Наблюдения по температуре ведутся с 11 марта 2016 года")
 	@GetMapping("average_temperature")
 	ResponseEntity<AvgTempWithoutId> getAverageTemperature(
 			@RequestParam

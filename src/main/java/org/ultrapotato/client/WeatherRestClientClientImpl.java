@@ -1,20 +1,20 @@
-package org.ultrapotato.service;
+package org.ultrapotato.client;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.ultrapotato.util.WeatherUtil;
 
 import java.time.LocalDate;
 
-@Service
-public class WeatherServiceRestImpl implements WeatherServiceRest {
+@Component
+public class WeatherRestClientClientImpl implements WeatherRestClient {
 	private final RestTemplate restTemplate;
 	private final String serverUrl;
 
 
-	public WeatherServiceRestImpl(
+	public WeatherRestClientClientImpl(
 			RestTemplate restTemplate,
 			@Value("${application.server.url}") String serverUrl
 	) {

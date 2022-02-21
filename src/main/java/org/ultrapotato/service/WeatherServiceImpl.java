@@ -1,6 +1,7 @@
 package org.ultrapotato.service;
 
 import org.springframework.stereotype.Service;
+import org.ultrapotato.client.WeatherRestClient;
 import org.ultrapotato.domain.AverageTemperature;
 import org.ultrapotato.dto.AvgTempWithoutId;
 import org.ultrapotato.repository.AverageTemperatureRepo;
@@ -10,10 +11,10 @@ import java.time.LocalDate;
 @Service
 public class WeatherServiceImpl implements WeatherService {
 
-	WeatherServiceRest weatherServiceRest;
-	AverageTemperatureRepo averageTemperatureRepo;
+	private final WeatherRestClient weatherServiceRest;
+	private final AverageTemperatureRepo averageTemperatureRepo;
 
-	public WeatherServiceImpl(WeatherServiceRest weatherServiceRest, AverageTemperatureRepo averageTemperatureRepo) {
+	public WeatherServiceImpl(WeatherRestClient weatherServiceRest, AverageTemperatureRepo averageTemperatureRepo) {
 		this.weatherServiceRest = weatherServiceRest;
 		this.averageTemperatureRepo = averageTemperatureRepo;
 	}

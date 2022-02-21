@@ -41,4 +41,24 @@ public class AvgTempWithoutId {
 	public void setAverageTemperature(Double averageTemperature) {
 		this.averageTemperature = averageTemperature;
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		AvgTempWithoutId that = (AvgTempWithoutId) o;
+
+		if (startDay != null ? !startDay.equals(that.startDay) : that.startDay != null) return false;
+		if (endDay != null ? !endDay.equals(that.endDay) : that.endDay != null) return false;
+		return averageTemperature != null ? averageTemperature.equals(that.averageTemperature) : that.averageTemperature == null;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = startDay != null ? startDay.hashCode() : 0;
+		result = 31 * result + (endDay != null ? endDay.hashCode() : 0);
+		result = 31 * result + (averageTemperature != null ? averageTemperature.hashCode() : 0);
+		return result;
+	}
 }
